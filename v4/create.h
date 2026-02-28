@@ -250,7 +250,7 @@ namespace Create
     {
         cerr << "Dang bien dich file kiem tra (validator.cpp).\n";
          // Nên dùng c++17 trở lên và bật cảnh báo
-        int result = system("g++ -std=c++14 -Wall -Wextra -O2 -s -static validator.cpp -o validator.exe");
+        int result = system("g++ -std=c++14 -Wl,-z,stack-size=66060288 -Wall -Wextra -O2 -s -static validator.cpp -o validator.exe");
         if (result != 0) {
             cerr << "LOI: Khong the bien dich validator.cpp. Ma loi: " << result << endl;
             exit(1); // Thoát nếu biên dịch lỗi
@@ -374,3 +374,4 @@ namespace Create
         return true; // Báo hiệu test này đã chạy thành công
     }
 }
+
