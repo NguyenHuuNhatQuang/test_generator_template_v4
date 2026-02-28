@@ -237,7 +237,7 @@ namespace Create
     {
         cerr << "Dang bien dich file loi giai (solution.cpp).\n";
         // Nên dùng c++17 trở lên và bật cảnh báo
-        int result = system("g++ -std=c++14 -Wall -Wextra -O2 -s -static solution.cpp -o solution.exe");
+        int result = system("g++ -std=c++14 -Wl,--stack=66060288 -Wall -Wextra -O2 -s -static solution.cpp -o solution.exe");
         if (result != 0) {
             cerr << "LOI: Khong the bien dich solution.cpp. Ma loi: " << result << endl;
             exit(1); // Thoát nếu biên dịch lỗi
@@ -250,7 +250,7 @@ namespace Create
     {
         cerr << "Dang bien dich file kiem tra (validator.cpp).\n";
          // Nên dùng c++17 trở lên và bật cảnh báo
-        int result = system("g++ -std=c++14 -Wl,-z,stack-size=66060288 -Wall -Wextra -O2 -s -static validator.cpp -o validator.exe");
+        int result = system("g++ -std=c++14 -Wl,--stack=66060288 -Wall -Wextra -O2 -s -static validator.cpp -o validator.exe");
         if (result != 0) {
             cerr << "LOI: Khong the bien dich validator.cpp. Ma loi: " << result << endl;
             exit(1); // Thoát nếu biên dịch lỗi
@@ -263,7 +263,7 @@ namespace Create
     void compile_checker ()
     {
         cerr << "Dang bien dich file kiem tra (checker.cpp).\n";
-        int result = system("g++ -std=c++14 -Wall -Wextra -O2 -s -static checker.cpp -o checker.exe");
+        int result = system("g++ -std=c++14 -Wl,--stack=66060288 -Wall -Wextra -O2 -s -static checker.cpp -o checker.exe");
         if (result != 0) {
             cerr << "LOI: Khong the bien dich checker.cpp. Ma loi: " << result << endl;
             exit(1); // Thoát nếu biên dịch lỗi
@@ -374,4 +374,3 @@ namespace Create
         return true; // Báo hiệu test này đã chạy thành công
     }
 }
-
